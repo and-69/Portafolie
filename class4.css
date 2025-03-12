@@ -1,6 +1,5 @@
 * {
     margin: 0;
-
 }
 
 .banner {
@@ -128,7 +127,7 @@ a {
     margin-left: 350px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 999px) {
     .banner {
         width: 80%;
     }
@@ -137,7 +136,14 @@ a {
         font-size: 30px;
     }
 
-    .img1,
+    .img1 {
+        width: 500px;
+        height: auto;
+        margin: 20px 0;
+        margin-left: 0;
+        margin-top: 50px;
+    }
+
     .img2,
     .img3,
     .miniatura {
@@ -162,6 +168,143 @@ a {
     .pry4 {
         display: grid;
         grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    a {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #007BFF;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 5px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .banner {
+        width: 70%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .img1 {
+        width: 300px;
+        height: auto;
+        margin-top: 30px;
+        margin-left: 0;
+
+    }
+
+    .img2,
+    .img3,
+    .miniatura {
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+        margin-left: 0;
+    }
+
+    .c1,
+    .c2,
+    .c3,
+    .c4 {
+        margin-top: 0px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .pry1,
+    .pry2,
+    .pry3,
+    .pry4 {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 5px;
+        padding: 20px;
+    }
+
+    a {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #007BFF;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 5px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1000px) and (max-width:1440px) {
+    .banner {
+        width: 88%;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .img1 {
+        width: 300px;
+        height: auto;
+        margin-left: 200px;
+        margin-top: 60px;
+    }
+
+    .img2,
+    .img3,
+    .miniatura {
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+        margin-left: 0;
+    }
+
+    .c1 {
+        margin-left: 0;
+    }
+
+    .c2,
+    .c3,
+    .c4 {
+        margin-top: 50px;
+        margin-left: 0;
+        text-align: center;
+
+    }
+
+    .pry1,
+    .pry2,
+    .pry3,
+    .pry4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 20px;
         padding: 20px;
     }
