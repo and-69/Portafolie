@@ -120,13 +120,29 @@ a {
     margin-bottom: 50px;
     border-radius: 10px;
 }
-
-
 .c4 {
     margin-top: 230px;
     margin-left: 350px;
 }
+.img5 {
+    width: 500px;
+    height: auto;
+    margin-top: 50px;
+    margin-left: 250px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+.pry5 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background-color: rgb(78, 113, 201);
 
+}
+.c5 {
+    margin-top: 150px;
+}
 @media (max-width: 999px) {
     .banner {
         width: 80%;
@@ -144,6 +160,14 @@ a {
         margin-top: 50px;
     }
 
+    .img5 {
+        width: 500px;
+        height: 100%;
+        margin: 20px 0;
+        margin-left: 0;
+        margin-top: 50px;
+    }
+
     .img2,
     .img3,
     .miniatura {
@@ -156,7 +180,8 @@ a {
     .c1,
     .c2,
     .c3,
-    .c4 {
+    .c4,
+    .c5 {
         margin-top: 0px;
         margin-left: 0;
         text-align: center;
@@ -165,7 +190,8 @@ a {
     .pry1,
     .pry2,
     .pry3,
-    .pry4 {
+    .pry4,
+    .pry5 {
         display: grid;
         grid-template-columns: 1fr;
         justify-content: center;
@@ -211,6 +237,13 @@ a {
 
     }
 
+    .img5 {
+        width: 300px;
+        height: 100%;
+        margin-top: 30px;
+        margin-left: 0;
+
+    }
     .img2,
     .img3,
     .miniatura {
@@ -223,7 +256,8 @@ a {
     .c1,
     .c2,
     .c3,
-    .c4 {
+    .c4,
+    .c5 {
         margin-top: 0px;
         margin-left: 0;
         text-align: center;
@@ -232,7 +266,8 @@ a {
     .pry1,
     .pry2,
     .pry3,
-    .pry4 {
+    .pry4,
+    .pry5 {
         display: grid;
         grid-template-columns: 1fr;
         justify-content: center;
@@ -279,32 +314,39 @@ a {
 
     .img2,
     .img3,
-    .miniatura {
+    .miniatura,
+    .img5 {
         width: 100%;
         height: auto;
         margin: 20px 0;
         margin-left: 0;
     }
 
-    .c1 {
-        margin-left: 0;
-    }
-
     .c2,
     .c3,
     .c4 {
-        margin-top: 50px;
+        margin-top: 0px;
         margin-left: 0;
         text-align: center;
 
     }
-
+    .c1{
+        margin-top: 0;
+        margin-left: 0;
+    }
+    .c5{
+        margin-top: 0px;
+    }
     .pry1,
     .pry2,
     .pry3,
-    .pry4 {
+    .pry4,
+    .pry5 {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         gap: 20px;
         padding: 20px;
     }
