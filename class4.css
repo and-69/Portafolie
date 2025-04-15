@@ -143,6 +143,26 @@ a {
 .c5 {
     margin-top: 150px;
 }
+.img6 {
+    width: 500px;
+    height: auto;
+    margin-top: 50px;
+    margin-left: 100px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+.pry6 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background-color: rgb(51, 173, 133);
+
+}
+.c6 {
+    margin-top: 150px;
+    margin-left: 350px;
+}
 @media (max-width: 999px) {
     .banner {
         width: 80%;
@@ -167,6 +187,13 @@ a {
         margin-left: 0;
         margin-top: 50px;
     }
+    .img6 {
+        width: 500px;
+        height: 100%;
+        margin: 20px 0;
+        margin-left: 0;
+        margin-top: 50px;
+    }
 
     .img2,
     .img3,
@@ -181,7 +208,7 @@ a {
     .c2,
     .c3,
     .c4,
-    .c5 {
+    .c5,.c6 {
         margin-top: 0px;
         margin-left: 0;
         text-align: center;
@@ -191,7 +218,7 @@ a {
     .pry2,
     .pry3,
     .pry4,
-    .pry5 {
+    .pry5,.pry6 {
         display: grid;
         grid-template-columns: 1fr;
         justify-content: center;
@@ -244,6 +271,13 @@ a {
         margin-left: 0;
 
     }
+    .img6 {
+        width: 300px;
+        height: 100%;
+        margin-top: 30px;
+        margin-left: 0;
+
+    }
     .img2,
     .img3,
     .miniatura {
@@ -257,7 +291,7 @@ a {
     .c2,
     .c3,
     .c4,
-    .c5 {
+    .c5,.c6 {
         margin-top: 0px;
         margin-left: 0;
         text-align: center;
@@ -267,7 +301,7 @@ a {
     .pry2,
     .pry3,
     .pry4,
-    .pry5 {
+    .pry5,.pry6 {
         display: grid;
         grid-template-columns: 1fr;
         justify-content: center;
@@ -315,7 +349,7 @@ a {
     .img2,
     .img3,
     .miniatura,
-    .img5 {
+    .img5,.img6 {
         width: 100%;
         height: auto;
         margin: 20px 0;
@@ -324,7 +358,7 @@ a {
 
     .c2,
     .c3,
-    .c4 {
+    .c4,.c6 {
         margin-top: 0px;
         margin-left: 0;
         text-align: center;
@@ -341,7 +375,7 @@ a {
     .pry2,
     .pry3,
     .pry4,
-    .pry5 {
+    .pry5,.pry6 {
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-content: center;
