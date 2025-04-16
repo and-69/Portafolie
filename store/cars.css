@@ -1677,7 +1677,11 @@ p7{
     }
 }
 @media (max-width: 400px) {
-    
+    html, body,.all {
+        overflow-x: hidden;
+        width: 100%;
+
+    }
     .banner {
         grid-template-columns: 1fr;
         gap: 5px;
