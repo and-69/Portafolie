@@ -650,7 +650,7 @@ p7{
         margin: 25px 0px;
     }
 }
-/* Media Query 1300px (manteniendo tu estructura original) */
+
 @media (max-width: 1300px) {
     *{
         margin: 0;
@@ -1124,7 +1124,7 @@ p7{
         margin: 25px 0px;
     }
 }
-/* Media Query 1000px */
+
 @media (max-width: 1000px) {
     * {
         margin: 0;
@@ -1227,7 +1227,6 @@ p7{
     }
 }
 
-/* Media Query 800px */
 @media (max-width: 800px) {
     .banner {
         gap: 15px;
@@ -1454,7 +1453,7 @@ p7{
         gap: 20px;
     }
 }
-/* Media Query 600px */
+
 @media (max-width: 600px) {
     .banner {
         gap: 8px;
@@ -1678,6 +1677,7 @@ p7{
     }
 }
 @media (max-width: 400px) {
+    
     .banner {
         grid-template-columns: 1fr;
         gap: 5px;
@@ -1689,7 +1689,7 @@ p7{
     }
     
     .portada {
-        height: 400px;
+        height: 450px;
         width: 100%;
     }
     
@@ -1697,12 +1697,11 @@ p7{
         margin-top: 100px;
         gap: 3px;
         font-size: 8px;
-        flex-wrap: wrap;
     }
     
     .img1 {
         width: 180px;
-        top: 20px;
+        top: 0px;
         left:100px
     }
     
@@ -1710,19 +1709,33 @@ p7{
         width: 95%;
         height: 200px;
         left: 20px;
-        top: 230px;
+        top: 220px;
     }
     
     p1 {
-        padding: 0px 3px;
-        font-size: 18px;
+        padding: 5px 10px;
+        font-size: 20px;
+        display: flex;
+        margin-left: 0px;
+        justify-content: center;
+        align-items: center;
+    }
+    .lupa{
+        font-size: 25px;
     }
     
     .contenedor-pestañas {
         top: 320px;
-        left:30px
+        left:25px
     }
-    
+    .referrer{
+        padding: 5px 10px;
+        font-size: 15px;
+        margin: 0;
+    }
+    textarea{
+        margin: 0px 0px;
+    }
     .title2 {
         top: 720px;
         left: 10px;
@@ -1776,6 +1789,7 @@ p7{
     
     .grilla1 {
         top: 4080px;
+        width: 100%;
     }
     .img5{
         width: 100%;
@@ -1784,10 +1798,12 @@ p7{
         width: 100%;
     }
     .en1 {
-        left: 300px;
+        left: 290px;
         font-size: 16px;
     }
-    
+    .division1{
+        width: 100%;
+    }
     .footer {
         top: 5550px;
         height: 290px;
@@ -1799,15 +1815,25 @@ p7{
     
     p5 {
         font-size: 16px;
+        
     }
-    
+    p6{
+        text-align: center;
+    }
     .lupa1 {
         font-size: 20px;
     }
+
 }
 
-/* Media Query 300px */
+
 @media (max-width: 350px) {
+    html, body,.all {
+        overflow-x: hidden;
+        width: 100%;
+
+    }
+
     .banner {
         grid-template-columns: 1fr;
         gap: 5px;
@@ -1815,51 +1841,66 @@ p7{
     }
     
     .banner p {
-        font-size: 7px;
+        font-size: 6px;
     }
     
     .portada {
-        height: 400px;
+        height: 500px;
         width: 100%;
     }
     
     .banner2 {
         margin-top: 100px;
         gap: 3px;
-        font-size: 8px;
-        flex-wrap: wrap;
+        font-size: 7px;
+        display: flex;
+        flex-direction: column;
     }
     
     .img1 {
         width: 180px;
-        top: 20px;
-        left:100px
+        top:90px;
+        left:80px
     }
     
     .img2 {
         width: 95%;
         height: 200px;
         left: 20px;
-        top: 230px;
+        top: 300px;
     }
     
     p1 {
-        padding: 0px 3px;
-        font-size: 18px;
+        padding: 10px 20px;
+        font-size: 20px;
+        display: flex;
+        margin-left: 0px;
+        justify-content: center;
+        align-items: center;
+    }
+    .lupa{
+        font-size: 25px;
     }
     
     .contenedor-pestañas {
-        top: 320px;
-        left:30px
+        top: 410px;
+        left:15px
     }
-    
+    .referrer{
+        padding: 5px 10px;
+        font-size: 15px;
+        margin: 0;
+    }
+    textarea{
+        margin: 0px 0px;
+    }
     .title2 {
-        top: 720px;
-        left: 10px;
+        top: 810px;
+        left: 0px;
     }
     
     .grilla {
-        top:850px;
+        top:930px;
         gap: 10px;
     }
     
@@ -1869,20 +1910,20 @@ p7{
     }
     
     h6 {
-        top: 3750px;
+        top: 3850px;
         padding: 6px 12px;
         font-size: 18px;
     }
     
     .img4 {
-        top: 3800px;
+        top: 3900px;
         height: 200px;
         width: 100%;
     }
     
     .textban {
-        top: 3810px;
-        left: 50px;
+        top: 3910px;
+        left: 25px;
         width: 280px;
         height: 180px;
         gap: 15px;
@@ -1901,11 +1942,12 @@ p7{
     }
     
     .title3 {
-        top: 4020px;
+        top: 4120px;
     }
     
     .grilla1 {
-        top: 4080px;
+        top: 4170px;
+        width: 100%;
     }
     .img5{
         width: 100%;
@@ -1914,13 +1956,15 @@ p7{
         width: 100%;
     }
     .en1 {
-        left: 300px;
+        left: 260px;
         font-size: 16px;
     }
-    
+    .division1{
+        width: 100%;
+    }
     .footer {
-        top: 5550px;
-        height: 290px;
+        top: 5750px;
+        height: 300px;
     }
     
     .busq1 {
@@ -1929,9 +1973,13 @@ p7{
     
     p5 {
         font-size: 16px;
+        
     }
-    
+    p6{
+        text-align: center;
+    }
     .lupa1 {
         font-size: 20px;
     }
+
 }
