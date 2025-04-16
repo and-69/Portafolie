@@ -1827,11 +1827,12 @@ p7{
     .lupa1 {
         font-size: 20px;
     }
-
+    .pq{
+        font-size: 18px;
+    }
 }
 
-
-@media (max-width: 350px) {
+@media (max-width: 390px) {
     html, body,.all {
         overflow-x: hidden;
         width: 100%;
@@ -1841,7 +1842,7 @@ p7{
     .banner {
         grid-template-columns: 1fr;
         gap: 5px;
-        padding: 3px 0;
+        width: 100%;
     }
     
     .banner p {
@@ -1870,7 +1871,7 @@ p7{
     .img2 {
         width: 95%;
         height: 200px;
-        left: 20px;
+        left: 10px;
         top: 300px;
     }
     
@@ -1907,27 +1908,46 @@ p7{
         top:930px;
         gap: 10px;
     }
-    
+    h5{
+        font-size: 20px;
+    }
+    .ds{
+        flex-direction: column;
+    }
+    .price,.price1{
+        font-size:16px ;
+        width: 100px;
+        font-size: 20px;
+
+    }
+    p1{
+        font-size: 20px;
+        padding: 10px 20px;
+        margin: 0;
+    }
+    .pq{
+        font-size: 20px;
+    }
     .img3, .img5 {
         height: 250px;
         width: 100%;
     }
     
     h6 {
-        top: 3850px;
+        top: 4030px;
         padding: 6px 12px;
         font-size: 18px;
     }
     
     .img4 {
-        top: 3900px;
+        top: 4100px;
         height: 200px;
         width: 100%;
     }
     
     .textban {
-        top: 3910px;
-        left: 25px;
+        top: 4110px;
+        left: 35px;
         width: 280px;
         height: 180px;
         gap: 15px;
@@ -1946,11 +1966,11 @@ p7{
     }
     
     .title3 {
-        top: 4120px;
+        top: 4320px;
     }
     
     .grilla1 {
-        top: 4170px;
+        top: 4370px;
         width: 100%;
     }
     .img5{
@@ -1960,14 +1980,368 @@ p7{
         width: 100%;
     }
     .en1 {
-        left: 260px;
+        top: 200px;
+        left: 0px;
         font-size: 16px;
     }
     .division1{
         width: 100%;
     }
     .footer {
-        top: 5750px;
+        top: 5850px;
+        height: 300px;
+    }
+    
+    .busq1 {
+        gap: 15px;
+    }
+    
+    p5 {
+        font-size: 16px;
+        
+    }
+    p6{
+        text-align: center;
+    }
+    .lupa1 {
+        font-size: 20px;
+    }
+
+}
+
+@media (max-width: 350px) {
+    html, body,.all {
+        overflow-x: hidden;
+        width: 100%;
+
+    }
+
+    .banner {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        width: 100%;
+    }
+    
+    .banner p {
+        font-size: 6px;
+    }
+    
+    .portada {
+        height: 500px;
+        width: 100%;
+    }
+    
+    .banner2 {
+        margin-top: 100px;
+        gap: 3px;
+        font-size: 7px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .img1 {
+        width: 180px;
+        top:90px;
+        left:80px
+    }
+    
+    .img2 {
+        width: 95%;
+        height: 200px;
+        left: 10px;
+        top: 300px;
+    }
+    
+    p1 {
+        padding: 10px 20px;
+        font-size: 20px;
+        display: flex;
+        margin-left: 0px;
+        justify-content: center;
+        align-items: center;
+    }
+    .lupa{
+        font-size: 25px;
+    }
+    
+    .contenedor-pestañas {
+        top: 410px;
+        left:15px
+    }
+    .referrer{
+        padding: 5px 10px;
+        font-size: 15px;
+        margin: 0;
+    }
+    textarea{
+        margin: 0px 0px;
+    }
+    .title2 {
+        top: 810px;
+        left: 0px;
+    }
+    
+    .grilla {
+        top:930px;
+        gap: 10px;
+    }
+    h5{
+        font-size: 20px;
+    }
+    .ds{
+        flex-direction: column;
+    }
+    .price,.price1{
+        font-size:16px ;
+        width: 100px;
+        font-size: 20px;
+
+    }
+    p1{
+        font-size: 20px;
+        padding: 10px 20px;
+        margin: 0;
+    }
+    .pq{
+        font-size: 20px;
+    }
+    .img3, .img5 {
+        height: 250px;
+        width: 100%;
+    }
+    
+    h6 {
+        top: 4030px;
+        padding: 6px 12px;
+        font-size: 18px;
+    }
+    
+    .img4 {
+        top: 4100px;
+        height: 200px;
+        width: 100%;
+    }
+    
+    .textban {
+        top: 4110px;
+        left: 35px;
+        width: 280px;
+        height: 180px;
+        gap: 15px;
+    }
+    
+    .col1, .col2 {
+        gap: 15px;
+    }
+    
+    .tam {
+        font-size: 25px;
+    }
+    
+    .carr {
+        font-size: 40px;
+    }
+    
+    .title3 {
+        top: 4320px;
+    }
+    
+    .grilla1 {
+        top: 4370px;
+        width: 100%;
+    }
+    .img5{
+        width: 100%;
+    }
+    .a1{
+        width: 100%;
+    }
+    .en1 {
+        top: 200px;
+        left: 0px;
+        font-size: 16px;
+    }
+    .division1{
+        width: 100%;
+    }
+    .footer {
+        top: 5950px;
+        height: 300px;
+    }
+    
+    .busq1 {
+        gap: 15px;
+    }
+    
+    p5 {
+        font-size: 16px;
+        
+    }
+    p6{
+        text-align: center;
+    }
+    .lupa1 {
+        font-size: 20px;
+    }
+
+}
+@media (max-width: 330px) {
+    html, body,.all {
+        overflow-x: hidden;
+        width: 100%;
+
+    }
+
+    .banner {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        width: 100%;
+    }
+    
+    .banner p {
+        font-size: 6px;
+    }
+    
+    .portada {
+        height: 500px;
+        width: 100%;
+    }
+    
+    .banner2 {
+        margin-top: 100px;
+        gap: 3px;
+        font-size: 7px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .img1 {
+        width: 180px;
+        top:90px;
+        left:80px
+    }
+    
+    .img2 {
+        width: 95%;
+        height: 200px;
+        left: 10px;
+        top: 300px;
+    }
+    
+    p1 {
+        padding: 10px 20px;
+        font-size: 20px;
+        display: flex;
+        margin-left: 0px;
+        justify-content: center;
+        align-items: center;
+    }
+    .lupa{
+        font-size: 25px;
+    }
+    
+    .contenedor-pestañas {
+        top: 410px;
+        left:15px
+    }
+    .referrer{
+        padding: 5px 10px;
+        font-size: 15px;
+        margin: 0;
+    }
+    textarea{
+        margin: 0px 0px;
+    }
+    .title2 {
+        top: 810px;
+        left: 0px;
+    }
+    
+    .grilla {
+        top:930px;
+        gap: 10px;
+    }
+    h5{
+        font-size: 20px;
+    }
+    .ds{
+        flex-direction: column;
+    }
+    .price,.price1{
+        font-size:16px ;
+        width: 100px;
+        font-size: 20px;
+
+    }
+    p1{
+        font-size: 20px;
+        padding: 10px 20px;
+        margin: 0;
+    }
+    .pq{
+        font-size: 20px;
+    }
+    .img3, .img5 {
+        height: 250px;
+        width: 100%;
+    }
+    
+    h6 {
+        top: 4030px;
+        padding: 6px 12px;
+        font-size: 18px;
+    }
+    
+    .img4 {
+        top: 4100px;
+        height: 200px;
+        width: 100%;
+    }
+    
+    .textban {
+        top: 4110px;
+        left: 35px;
+        width: 280px;
+        height: 180px;
+        gap: 15px;
+    }
+    
+    .col1, .col2 {
+        gap: 15px;
+    }
+    
+    .tam {
+        font-size: 25px;
+    }
+    
+    .carr {
+        font-size: 40px;
+    }
+    
+    .title3 {
+        top: 4320px;
+    }
+    
+    .grilla1 {
+        top: 4370px;
+        width: 100%;
+    }
+    .img5{
+        width: 100%;
+    }
+    .a1{
+        width: 100%;
+    }
+    .en1 {
+        top: 200px;
+        left: 0px;
+        font-size: 16px;
+    }
+    .division1{
+        width: 100%;
+    }
+    .footer {
+        top: 5950px;
         height: 300px;
     }
     
