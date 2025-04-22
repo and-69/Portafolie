@@ -236,7 +236,7 @@ h4{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     width: 1300px;
-    height: 500px;
+    height: auto;
     gap:30px;
     position: absolute;
     top: 650px;
