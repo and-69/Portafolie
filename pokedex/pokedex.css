@@ -1,0 +1,239 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+.card{
+    border: 1px solid black;
+    width: 620px;
+    height: auto;
+    margin: 100px 0;
+    z-index: 20;
+}
+.card1{
+    border: 1px solid black;
+    width: 620px;
+    height: auto;
+    margin: 100px 0;
+    z-index: 20;
+    padding: 50px;
+}
+.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+}
+h1{
+    font-size: 70px;
+}
+.pokemons{
+    width: 300px;
+    height: 300px;
+    margin: 0;
+    padding: 0;
+}
+.atr{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+}
+.bar-container {
+    width: 100%;
+    background-color: white;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.bar {
+    height: 15px;
+}
+
+.fondogif{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    object-fit: cover;
+}
+.bar-container{
+    border: 2px solid black;
+    border-radius: 10px;
+}
+h3{
+    font-size: 30px;
+}
+@media (max-width: 1440px) {
+    .card, .card1 {
+        width: 550px;
+        margin: 100px 0;
+    }
+}
+@media (max-width: 1250px) {
+    .card, .card1 {
+        width: 500px;
+        margin: 100px 0;
+    }
+}
+@media (max-width: 1150px) {
+    .card, .card1 {
+        width: 450px;
+        margin: 100px 0;
+    }
+}
+@media (max-width: 1000px) {
+    .card, .card1 {
+        width: 400px;
+        margin: 100px 0;
+    }
+}
+@media (max-width: 900px) {
+    .card, .card1 {
+        width: 350px;
+        margin: 100px 0;
+    }
+    h1{
+        font-size: 50px;
+    }
+    h2{
+        font-size: 25px;
+    }
+    h3{
+        font-size: 20px;
+    }
+    .img1{
+        width: 200px;
+        height: 100px;
+    }
+    .fondogif{
+        height: 867px;
+    }
+}
+@media (max-width: 800px) {
+    .cards{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .card, .card1 {
+        width: 600px;
+        margin: 10px 0;
+    }
+    h1{
+        font-size: 70px;
+    }
+    h2{
+        font-size: 30px;
+    }
+    h3{
+        font-size: 25px;
+    }
+    .img1{
+        width: 350px;
+        height: 150px;
+    }
+    .fondogif{
+        height: 1260px;
+    }
+}
+@media (max-width: 600px) {
+    .cards{
+        gap: 40px;
+    }
+    .card, .card1 {
+        width: 500px;
+        margin: 10px 0;
+    }
+}
+@media (max-width: 500px) {
+    .cards{
+        gap: 40px;
+    }
+    .card, .card1 {
+        width: 430px;
+        margin: 10px 0;
+    }
+    .fondogif{
+        height: 1300px;
+    }
+}
+@media (max-width: 400px) {
+    .cards{
+        gap: 40px;
+    }
+    .img1{
+        width: 250px;
+        height: 100px;
+    }
+    .card, .card1 {
+        width: 350px;
+        margin: 10px 0;
+    }
+    .fondogif{
+        height: 1300px;
+    }
+}
+@media (max-width: 350px) {
+    .card, .card1 {
+        width: 300px;
+        margin: 10px 0;
+    }
+    h1{
+        font-size: 50px;
+    }
+    h2{
+        font-size: 25px;
+    }
+    h3{
+        font-size: 20px;
+    }
+    .img1{
+        width: 250px;
+        height: 100px;
+    }
+    .fondogif{
+        height: 1250px;
+    }
+}
+@media (max-width: 350px) {
+    .card, .card1 {
+        width: 250px;
+        margin: 10px 0;
+    }
+    .pokemons{
+        width: 200px;
+        height: 200px;
+    }
+    h1{
+        font-size: 40px;
+    }
+    h2{
+        font-size: 20px;
+    }
+    h3{
+        font-size: 15px;
+    }
+    .img1{
+        width: 200px;
+        height: 80px;
+    }
+    .fondogif{
+        height: 1120px;
+    }
+}

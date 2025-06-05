@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pokedex.css">
+    <title>Pokedex</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <div class="content">
+        <img src="/imgs/fondo.gif" alt="" class="fondogif">
+        <div class="cards">
+            <div class="card">
+                <img src="imgs/pok.png" class="img1" alt="">
+                <h1 id="titulo"></h1>
+                <h2>Id: #<p id="id"></p>
+                </h2>
+                <img src="" id="pok" class="pokemons" alt="">
+                <div class="atr">
+                    <h2>Altura:<p id="altura">
+                    </h2>
+                    <h2>Peso:<p id="peso">
+                    </h2>
+                </div>
+                <br>
+            </div>
+            <div class="card1">
+                <h3>Tipos del pokemon: <p1 id="tipos"></p1>
+                </h3>
+                <h3>Debilidades del pokemon: <p1 id="debilidades"></p1>
+                </h3>
+                <br>
+                <div class="stats">
+                    <h3>Estadísticas:</h3>
+                    <br>
+                    <p1 id="estadisticas"></p1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            let randomPokemon = Math.floor(Math.random() * 400) + 1
+            let res = await axios.get("https://pokeapi.co/api/v2/pokemon/" + randomPokemon)
+            console.log(res);
+            const typeColors = {
+                normal: '#A8A878',
+                fire: '#F08030',
+                water: '#6890F0',
+                electric: '#F8D030',
+                grass: '#78C850',
+                ice: '#98D8D8',
+                fighting: '#C03028',
+                poison: '#A040A0',
+                ground: '#E0C068',
+                flying: '#A890F0',
+                psychic: '#F85888',
+                bug: '#A8B820',
+                rock: '#B8A038',
+                ghost: '#705898',
+                dragon: '#7038F8',
+                dark: '#705848',
+                steel: '#B8B8D0',
+                fairy: '#EE99AC'
+            };
+            const pokemonName = res.data.name
+            const prMayus = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1)
+            const tipos = res.data.types
+            const card = document.querySelector(".card")
+            const card1 = document.querySelector(".card1")
+            if (tipos.length === 1) {
+                const color = typeColors[tipos[0].type.name];
+                card.style.background = color;
+                card1.style.background=color;
+            } else if (tipos.length >= 2) {
+                const color1 = typeColors[tipos[0].type.name];
+                const color2 = typeColors[tipos[1].type.name];
+                card.style.background = `linear-gradient(135deg, ${color1}, ${color2})`;
+                card1.style.background=`linear-gradient(135deg, ${color1}, ${color2})`;
+            }
+
+            document.getElementById("titulo").textContent = prMayus
+            document.getElementById("id").textContent = res.data.id
+            document.getElementById("pok").src = res.data.sprites.front_default
+            document.getElementById("altura").textContent = res.data.height / 10 + "m"
+            document.getElementById("peso").textContent = res.data.weight / 10 + "kg"
+            document.getElementById("tipos").innerHTML = ""
+            tipos.forEach((item, i) => {
+                const typeName = item.type.name;
+                const button = document.createElement('button');
+                button.textContent = typeName.toUpperCase();
+                button.style.backgroundColor = typeColors[typeName];
+                button.style.color = 'white';
+                button.style.padding = '2px 8px';
+                button.style.borderRadius = '3px';
+                button.style.marginRight = '5px';
+                document.getElementById("tipos").appendChild(button);
+            })
+            const debildResponse = await axios.get(res.data.types[0].type.url);
+            const debilidades = debildResponse.data.damage_relations.double_damage_from;
+            debilidades.forEach((item) => {
+                const typeName = item.name;
+                const button = document.createElement('button');
+                button.textContent = typeName.toUpperCase();
+                button.style.backgroundColor = typeColors[typeName];
+                button.style.color = 'white';
+                button.style.padding = '2px 8px';
+                button.style.borderRadius = '3px';
+                button.style.marginRight = '5px';
+                document.getElementById("debilidades").appendChild(button);
+            });
+
+            let color1 = typeColors[tipos[0].type.name]
+            let color2 = null;
+            if (tipos.length > 1) {
+                color2 = typeColors[tipos[1].type.name];
+            }
+            res.data.stats.forEach((item, i) => {
+                const statNames = ['HP', 'Attack', 'Defense', 'Special-attack', 'Special-defense', 'Speed']
+                const porcentaj = (item.base_stat / 255) * 100
+                let barColor;
+                if (tipos.length === 1) {
+                    barColor = `background-color:${color1}`
+                } else {
+                    barColor = `background:linear-gradient(90deg,${color1},${color2})`
+                }
+                document.getElementById("estadisticas").innerHTML += `
+                    <p>${statNames[i]}:${item.base_stat}/255</p>
+                    <div class="bar-container">
+                        <div class="bar" style="width: ${porcentaj}%; ${barColor}"></div>
+                    </div>
+                `
+            })
+
+        })
+    </script>
+</body>
+
+</html>
