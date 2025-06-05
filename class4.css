@@ -152,6 +152,15 @@ a {
     border-radius: 10px;
     margin-bottom: 50px;
 }
+.img7 {
+    width: 500px;
+    height: 400px;
+    margin-top: 50px;
+    margin-left: 250px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
 .pry6 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -159,9 +168,19 @@ a {
     background-color: rgb(51, 173, 133);
 
 }
+.pry7 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background-color: rgb(96, 29, 134);
+
+}
 .c6 {
     margin-top: 150px;
     margin-left: 350px;
+}
+.c7 {
+    margin-top: 150px;
 }
 @media (max-width: 999px) {
     .banner {
@@ -197,7 +216,7 @@ a {
 
     .img2,
     .img3,
-    .miniatura {
+    .miniatura,.img7 {
         width: 100%;
         height: auto;
         margin: 20px 0;
@@ -208,7 +227,7 @@ a {
     .c2,
     .c3,
     .c4,
-    .c5,.c6 {
+    .c5,.c6,.c7 {
         margin-top: 0px;
         margin-left: 0;
         text-align: center;
@@ -218,7 +237,7 @@ a {
     .pry2,
     .pry3,
     .pry4,
-    .pry5,.pry6 {
+    .pry5,.pry6,.pry7 {
         display: grid;
         grid-template-columns: 1fr;
         justify-content: center;
@@ -280,7 +299,7 @@ a {
     }
     .img2,
     .img3,
-    .miniatura {
+    .miniatura,.img7 {
         width: 100%;
         height: auto;
         margin: 20px 0;
@@ -291,7 +310,7 @@ a {
     .c2,
     .c3,
     .c4,
-    .c5,.c6 {
+    .c5,.c6,.c7 {
         margin-top: 0px;
         margin-left: 0;
         text-align: center;
@@ -301,7 +320,7 @@ a {
     .pry2,
     .pry3,
     .pry4,
-    .pry5,.pry6 {
+    .pry5,.pry6,.pry7 {
         display: grid;
         grid-template-columns: 1fr;
         justify-content: center;
@@ -349,7 +368,7 @@ a {
     .img2,
     .img3,
     .miniatura,
-    .img5,.img6 {
+    .img5,.img6,.img7 {
         width: 100%;
         height: auto;
         margin: 20px 0;
@@ -358,7 +377,7 @@ a {
 
     .c2,
     .c3,
-    .c4,.c6 {
+    .c4,.c6, .c7 {
         margin-top: 0px;
         margin-left: 0;
         text-align: center;
@@ -375,7 +394,9 @@ a {
     .pry2,
     .pry3,
     .pry4,
-    .pry5,.pry6 {
+    .pry5,
+    .pry6,
+    .pry7 {
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-content: center;
