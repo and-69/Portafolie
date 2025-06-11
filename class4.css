@@ -154,7 +154,7 @@ a {
 }
 .img7 {
     width: 500px;
-    height: 400px;
+    height: 300px;
     margin-top: 50px;
     margin-left: 250px;
     border: 2px solid black;
@@ -182,6 +182,27 @@ a {
 .c7 {
     margin-top: 150px;
 }
+.pry8 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background-color: rgb(255, 59, 157);
+
+}
+.c8 {
+    margin-top: 150px;
+    margin-left: 350px;
+}
+.img8 {
+    width: 500px;
+    height: 300px;
+    margin-top: 50px;
+    margin-left: 100px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
 @media (max-width: 999px) {
     .banner {
         width: 80%;
@@ -216,7 +237,7 @@ a {
 
     .img2,
     .img3,
-    .miniatura,.img7 {
+    .miniatura,.img7,.img8 {
         width: 100%;
         height: auto;
         margin: 20px 0;
@@ -227,7 +248,7 @@ a {
     .c2,
     .c3,
     .c4,
-    .c5,.c6,.c7 {
+    .c5,.c6,.c7,.c8 {
         margin-top: 0px;
         margin-left: 0;
         text-align: center;
@@ -237,7 +258,7 @@ a {
     .pry2,
     .pry3,
     .pry4,
-    .pry5,.pry6,.pry7 {
+    .pry5,.pry6,.pry7,.pry8 {
         display: grid;
         grid-template-columns: 1fr;
         justify-content: center;
@@ -299,7 +320,7 @@ a {
     }
     .img2,
     .img3,
-    .miniatura,.img7 {
+    .miniatura,.img7,.img8 {
         width: 100%;
         height: auto;
         margin: 20px 0;
@@ -310,7 +331,7 @@ a {
     .c2,
     .c3,
     .c4,
-    .c5,.c6,.c7 {
+    .c5,.c6,.c7,.c8 {
         margin-top: 0px;
         margin-left: 0;
         text-align: center;
@@ -320,7 +341,7 @@ a {
     .pry2,
     .pry3,
     .pry4,
-    .pry5,.pry6,.pry7 {
+    .pry5,.pry6,.pry7,.pry8 {
         display: grid;
         grid-template-columns: 1fr;
         justify-content: center;
@@ -368,7 +389,7 @@ a {
     .img2,
     .img3,
     .miniatura,
-    .img5,.img6,.img7 {
+    .img5,.img6,.img7,.img8 {
         width: 100%;
         height: auto;
         margin: 20px 0;
@@ -377,7 +398,7 @@ a {
 
     .c2,
     .c3,
-    .c4,.c6, .c7 {
+    .c4,.c6, .c7,.c8 {
         margin-top: 0px;
         margin-left: 0;
         text-align: center;
@@ -396,7 +417,7 @@ a {
     .pry4,
     .pry5,
     .pry6,
-    .pry7 {
+    .pry7,.pry8 {
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-content: center;
