@@ -1,0 +1,73 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+.modal-header {
+    background-color: blueviolet;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+textarea {
+    resize: none;
+}
+
+.filtag {
+    display: flex;
+    justify-content: space-between;
+}
+
+hr {
+    height: 10px;
+    background-color: rgb(68, 151, 0);
+    margin: 20px 200px;
+}
+
+.all {
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#liveAlertPlaceholder {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    z-index: 20;
+}
+.card {
+    margin-top: 20px;
+}
+#citasContainer{
+    display: flex;
+    gap: 20px;
+}
+.card-body,.card-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.emoji{
+    font-size: 50px;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buscador{
+    width: 270px;
+}
+.card-footer{
+    display: flex;
+    flex-direction: row;
+}
