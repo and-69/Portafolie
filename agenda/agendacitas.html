@@ -7,113 +7,140 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="agendacitas.css">
+    <link rel="stylesheet" href="ag.css">
     <title>Agenda</title>
 </head>
 
 <body>
-    <div class="all">
-        <h1>Agenda de citas</h1>
-        <hr>
-        <div class="filtag">
-            <div class="row">
-                <div class="col-md-12">
-                    <select class="form-select" aria-label="Default select example" id="filtroEstado">
-                        <option value="todas" selected>Todas las citas</option>
-                        <option value="pendiente">Pendientes</option>
-                        <option value="agendada">Agendadas</option>
-                        <option value="anulada">Anuladas</option>
-                    </select>
-                </div>
-            </div>
-            <div class="buscador">
+
+    <div class="container">
+        <div class="all">
+            <h1>Agenda de citas</h1>
+            <div class="hr"></div>
+            <div class="filtag">
                 <div class="row">
                     <div class="col-md-12">
-                        <input class="form-control" type="text" placeholder="Nombre de mascota o propietario"
-                            id="buscador">
+                        <select class="form-select" aria-label="Default select example" id="filtroEstado">
+                            <option value="todas" selected>Todas las citas</option>
+                            <option value="abierta">Abiertas</option>
+                            <option value="terminada">Terminadas</option>
+                            <option value="anulada">Anuladas</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="buscador">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" placeholder="Nombre de mascota o propietario"
+                                id="buscador">
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Agregar cita
+                </button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div id="liveAlertPlaceholder"></div>
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Guardar nueva cita</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container1">
+                                    <input type="hidden" id="citaId">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="text" class="form-control" id="nombre"
+                                                placeholder="Nombre de la mascota">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="text" class="form-control" id="propietario"
+                                                placeholder="Propietario">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="number" class="form-control" id="telefono"
+                                                placeholder="Teléfono">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="form-label">Fecha de la cita</label>
+                                            <input type="date" class="form-control" id="fecha">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Hora de la cita</label>
+                                            <input type="time" class="form-control" id="hora" min="08:00" max="20:00">
+                                        </div>
+                                    </div>
+                                    <select class="form-select" aria-label="Default select example" id="tipo">
+                                        <option value="" selected disabled>Tipo de mascota</option>
+                                        <option value="Canino">Canino</option>
+                                        <option value="Felino">Felino</option>
+                                        <option value="Anfibio">Anfibio</option>
+                                        <option value="Roedor">Roedor</option>
+                                        <option value="Equino">Equino</option>
+                                        <option value="Ave">Ave</option>
+                                        <option value="Acuático">Acuático</option>
+                                        <option value="Reptil">Reptil</option>
+                                        <option value="Marsupial">Marsupial</option>
+                                        <option value="Primate">Primate</option>
+                                    </select>
+                                    <div class="mb-3">
+                                        <textarea class="form-control" id="sintomas" rows="3" placeholder="Síntomas"
+                                            maxlength="400"></textarea>
+                                        <small id="contador" class="form-text text-muted" >0/400 caracteres</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                    onclick="limpiarFormulario()">Close</button>
+                                <button type="button" class="btn btn-warning" id="save"
+                                    onclick="guardarCita()">Save</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Agregar cita
-            </button>
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div id="liveAlertPlaceholder"></div>
+            <br>
+            <div id="citasContainer"></div>
+            <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Guardar nueva cita</h1>
+                            <h5 class="modal-title">Confirmar eliminación</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <div class="container">
-                                <input type="hidden" id="citaId">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <input type="text" class="form-control" id="nombre"
-                                            placeholder="Nombre de la mascota">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <input type="text" class="form-control" id="propietario"
-                                            placeholder="Propietario">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <input type="number" class="form-control" id="telefono" placeholder="Teléfono">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label class="form-label">Fecha de la cita</label>
-                                        <input type="date" class="form-control" id="fecha">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Hora de la cita</label>
-                                        <input type="time" class="form-control" id="hora">
-                                    </div>
-                                </div>
-                                <select class="form-select" aria-label="Default select example" id="tipo">
-                                    <option value="" selected disabled>Tipo de mascota</option>
-                                    <option value="Canino">Canino</option>
-                                    <option value="Felino">Felino</option>
-                                    <option value="Anfibio">Anfibio</option>
-                                    <option value="Roedor">Roedor</option>
-                                    <option value="Equino">Equino</option>
-                                    <option value="Ave">Ave</option>
-                                    <option value="Acuático">Acuático</option>
-                                    <option value="Reptil">Reptil</option>
-                                    <option value="Marsupial">Marsupial</option>
-                                    <option value="Primate">Primate</option>
-                                </select>
-                                <div class="mb-3">
-                                    <textarea class="form-control" id="sintomas" rows="3" placeholder="Síntomas"
-                                        wrap="none"></textarea>
-                                </div>
-                            </div>
+                            ¿Estás seguro de que deseas eliminar esta cita?
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="limpiarFormulario()">Close</button>
-                            <button type="button" class="btn btn-primary" id="save"
-                                onclick="guardarCita()">Save</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Eliminar</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <hr>
-        <div id="citasContainer"></div>
-
+        
         <script>
             let datosCit = JSON.parse(localStorage.getItem('citas')) || [];
             let validacion = false;
             let editando = false;
             let citaEditandoId = null;
-            let contadorId = datosCit.length > 0 ? Math.max(...datosCit.map(c => c.id)) + 1 : 1;
-            
+            let contadorId = 1;
+            if (datosCit.length > 0) {
+                contadorId = Math.max(...datosCit.map(cita => cita.id)) + 1;
+            }
+
             const emojis = {
                 Canino: "🐶",
                 Felino: "🐱",
@@ -127,19 +154,29 @@
                 Primate: "🐵"
             };
 
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function () {
                 actualizarTodasLasTarjetas();
-                
+
                 document.getElementById('filtroEstado').addEventListener('change', actualizarTodasLasTarjetas);
                 document.getElementById('buscador').addEventListener('input', actualizarTodasLasTarjetas);
-                
+                contadorCaracteres();
                 const hoy = new Date().toISOString().split('T')[0];
                 document.getElementById('fecha').min = hoy;
             });
 
+            function contadorCaracteres() {
+                const textarea = document.getElementById('sintomas');
+                const contador = document.getElementById('contador');
+                textarea.addEventListener('input', function () {
+                    const longitud = this.value.length;
+                    contador.textContent = `${longitud}/400 caracteres`;
+                });
+            }
+
+
             function guardarCita() {
                 if (!validaciones()) return;
-                
+
                 const datos = {
                     id: editando ? citaEditandoId : contadorId++,
                     nombreMascota: document.getElementById("nombre").value,
@@ -156,7 +193,7 @@
                     if (citaOriginal) {
                         datos.estado = citaOriginal.estado;
                     }
-                    
+
                     const index = datosCit.findIndex(cita => cita.id === citaEditandoId);
                     if (index !== -1) {
                         datosCit[index] = datos;
@@ -166,7 +203,6 @@
                 } else {
                     datosCit.unshift(datos);
                 }
-
                 localStorage.setItem('citas', JSON.stringify(datosCit));
                 actualizarTodasLasTarjetas();
                 const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
@@ -177,22 +213,26 @@
             function actualizarTodasLasTarjetas() {
                 const estadoFiltro = document.getElementById('filtroEstado').value;
                 const textoBusqueda = document.getElementById('buscador').value.toLowerCase();
-                const citasFiltradas = datosCit.filter(cita => {
+                let citasFiltradas = datosCit.filter(cita => {
                     const coincideEstado = estadoFiltro === 'todas' || cita.estado === estadoFiltro;
-                    const coincideBusqueda = 
-                        cita.nombreMascota.toLowerCase().includes(textoBusqueda) || 
+                    const coincideBusqueda =
+                        cita.nombreMascota.toLowerCase().includes(textoBusqueda) ||
                         cita.propietario.toLowerCase().includes(textoBusqueda);
-                    
+
                     return coincideEstado && coincideBusqueda;
                 });
-                
+                citasFiltradas = citasFiltradas.sort((a, b) => {
+                    const fechaHoraA = new Date(`${a.fecha}T${a.hora}`);
+                    const fechaHoraB = new Date(`${b.fecha}T${b.hora}`);
+                    return fechaHoraA - fechaHoraB;
+                });
                 const contenedor = document.getElementById("citasContainer");
                 contenedor.innerHTML = '';
 
                 citasFiltradas.forEach(datos => {
                     const card = document.createElement("div");
                     card.className = "card mb-3";
-                    card.style.width = "18rem";
+                    card.style.width = "100%";
                     card.innerHTML = `
                         <div class="card-body">
                             <h5 class="card-title">${datos.nombreMascota} <small class="text-muted">#${datos.id}</small></h5>
@@ -207,14 +247,15 @@
                             <li class="list-group-item">Síntomas: ${datos.sintomas}</li>
                             <li class="list-group-item">
                                 <select class="form-select estado-cita" data-id="${datos.id}" aria-label="Estado de la cita">
-                                    <option value="pendiente" ${datos.estado === 'pendiente' ? 'selected' : ''}>Pendiente</option>
-                                    <option value="agendada" ${datos.estado === 'agendada' ? 'selected' : ''}>Agendada</option>
+                                    <option value="" disabled selected>Estado de la cita</option>
+                                    <option value="abierta" ${datos.estado === 'abierta' ? 'selected' : ''}>Abierta</option>
+                                    <option value="terminada" ${datos.estado === 'terminada' ? 'selected' : ''}>Terminada</option>
                                     <option value="anulada" ${datos.estado === 'anulada' ? 'selected' : ''}>Anulada</option>
                                 </select>
                             </li>
                         </ul>
                         <div class="card-footer">
-                            <button class="btn btn-success btn-sm" onclick="editarCita(${datos.id})">
+                            <button class="btn btn-warning btn-sm" onclick="editarCita(${datos.id})">
                                 <i class="material-icons">drive_file_rename_outline</i> Editar
                             </button>
                             <button class="btn btn-danger btn-sm" onclick="eliminarCita(${datos.id})">
@@ -224,9 +265,9 @@
                     `;
                     contenedor.appendChild(card);
                 });
-                
+
                 document.querySelectorAll('.estado-cita').forEach(select => {
-                    select.addEventListener('change', function() {
+                    select.addEventListener('change', function () {
                         const id = parseInt(this.getAttribute('data-id'));
                         const nuevoEstado = this.value;
                         actualizarEstadoCita(id, nuevoEstado);
@@ -243,10 +284,16 @@
             }
 
             function eliminarCita(id) {
-                if (confirm('¿Estás seguro de que quieres eliminar esta cita?')) {
-                    datosCit = datosCit.filter(cita => cita.id !== id);
-                    localStorage.setItem('citas', JSON.stringify(datosCit));
-                    actualizarTodasLasTarjetas();
+                const modal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
+                modal.show();
+                if (document.getElementById('confirmDeleteBtn')) {
+                    document.getElementById('confirmDeleteBtn').onclick = function () {
+                        datosCit = datosCit.filter(cita => cita.id !== id);
+                        localStorage.setItem('citas', JSON.stringify(datosCit));
+                        actualizarTodasLasTarjetas();
+                        modal.hide();
+                        alerta('Cita eliminada correctamente.', 'success');
+                    };
                 }
             }
 
@@ -261,10 +308,10 @@
                     document.getElementById("tipo").value = cita.tipoMascota;
                     document.getElementById("sintomas").value = cita.sintomas;
                     document.getElementById("citaId").value = cita.id;
-                    
+
                     editando = true;
                     citaEditandoId = id;
-                    
+
                     const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
                     document.getElementById('exampleModalLabel').textContent = 'Editando cita';
                     document.getElementById('save').textContent = 'Guardar edición';
@@ -289,22 +336,45 @@
             }
 
             function validaciones() {
-                if (document.getElementById("nombre").value == "" || 
-                    document.getElementById("propietario").value == "" || 
-                    document.getElementById("telefono").value == "" || 
-                    document.getElementById("fecha").value == "" || 
-                    document.getElementById("hora").value == "" || 
-                    document.getElementById("tipo").value == "" || 
-                    document.getElementById("sintomas").value == "") {
-                    alerta('Todos los campos son obligatorios!', 'danger');
+                if (document.getElementById("nombre").value == "") {
+                    alerta('Digite el nombre de la mascota!', 'danger');
                     return false;
                 }
-                
-                if (document.getElementById("telefono").value.length !==10) {
-                    alerta('El teléfono debe tener como mínimo 10 dígitos.', 'danger');
+                else if (document.getElementById("propietario").value == "") {
+                    alerta('Digite nombre de propietario!', 'danger');
                     return false;
                 }
-                
+                else if (document.getElementById("telefono").value == "") {
+                    alerta('Digite el telefono de contacto!', 'danger');
+                    return false;
+                }
+                else if (document.getElementById("fecha").value == "") {
+                    alerta('Seleccione fecha!', 'danger');
+                    return false
+                }
+                else if (document.getElementById("hora").value == "") {
+                    alerta('Seleccione hora!', 'danger')
+                    return false;
+                }
+                else if (document.getElementById("tipo").value == "") {
+                    alerta('Seleccione tipo de mascota!', 'danger');
+                    return false;
+                }
+                else if (document.getElementById("sintomas").value == "") {
+                    alerta('Describa los síntomas!', 'danger');
+                    return false;
+                }
+                else if (document.getElementById("telefono").value.length !== 10) {
+                    alerta('El teléfono debe tener 10 dígitos.', 'danger');
+                    return false;
+                }
+                else if (document.getElementById("hora").value <= "08:00" || document.getElementById("hora").value >= "20:00") {
+                    alerta('Las horas de atención son de 8:00 a 20:00.', 'danger');
+                    return false;
+                }
+                else {
+                    validacion = true;
+                }
                 return true;
             }
 
@@ -317,10 +387,9 @@
                 document.getElementById("hora").value = "";
                 document.getElementById("tipo").value = "";
                 document.getElementById("sintomas").value = "";
-                
                 document.getElementById('exampleModalLabel').textContent = 'Guardar nueva cita';
                 document.getElementById('save').textContent = 'Save';
-                
+
                 editando = false;
                 citaEditandoId = null;
             }
@@ -331,4 +400,5 @@
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
