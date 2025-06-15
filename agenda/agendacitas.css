@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 h1 {
     display: flex;
     justify-content: center;
@@ -6,13 +12,14 @@ h1 {
 }
 
 .modal-header {
-    background-color: blueviolet;
+    background-color: #FFCA2C;
+    color: black;
 }
 
-.container {
+.container1 {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 textarea {
@@ -24,10 +31,10 @@ textarea {
     justify-content: space-between;
 }
 
-hr {
+.hr {
     height: 10px;
-    background-color: rgb(68, 151, 0);
-    margin: 20px 200px;
+    background-color: #FFCA2C;
+    margin: 20px 0
 }
 
 .all {
@@ -38,36 +45,91 @@ hr {
 
 #liveAlertPlaceholder {
     position: absolute;
-    top: 10px;
-    right: 0;
+    top: 0;
+    right: 42%;
     z-index: 20;
 }
-.card {
-    margin-top: 20px;
-}
-#citasContainer{
-    display: flex;
+
+#citasContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
-.card-body,.card-footer{
+
+.card-body,
+.card-footer {
     display: flex;
     flex-direction: column;
     gap: 10px;
     justify-content: center;
     align-items: center;
 }
-.emoji{
+
+.emoji {
     font-size: 50px;
 }
-.btn{
+
+.btn {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.buscador{
+
+.buscador {
     width: 270px;
 }
-.card-footer{
+
+.card-footer {
     display: flex;
     flex-direction: row;
+}
+
+.btn {
+    color: black;
+}
+
+@media (max-width: 1000px) {
+    #citasContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    #citasContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .filtag {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    #citasContainer {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+    .all {
+        margin: 10px 5px;
+
+    }
+    .emoji {
+        font-size: 60px;
+    }
+    .buscador{
+        width: 270px;
+    }
+    .filtag {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
 }
