@@ -31,12 +31,12 @@
                 <div class="buscador">
                     <div class="row">
                         <div class="col-md-12">
-                            <input class="form-control" type="text" placeholder="Nombre de mascota o propietario"
-                                id="buscador">
+                            <input class="form-control buscador" type="text"
+                                placeholder="Nombre de mascota o propietario" id="buscador">
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-verde" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Agregar cita
                 </button>
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -96,14 +96,14 @@
                                     <div class="mb-3">
                                         <textarea class="form-control" id="sintomas" rows="3" placeholder="Síntomas"
                                             maxlength="400"></textarea>
-                                        <small id="contador" class="form-text text-muted" >0/400 caracteres</small>
+                                        <small id="contador" class="form-text text-muted">0/400 caracteres</small>
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
                                     onclick="limpiarFormulario()">Close</button>
-                                <button type="button" class="btn btn-warning" id="save"
+                                <button type="button" class="btn btn-success verde" id="save"
                                     onclick="guardarCita()">Save</button>
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                 </div>
             </div>
         </div>
-        
+
         <script>
             let datosCit = JSON.parse(localStorage.getItem('citas')) || [];
             let validacion = false;
@@ -160,8 +160,9 @@
                 document.getElementById('filtroEstado').addEventListener('change', actualizarTodasLasTarjetas);
                 document.getElementById('buscador').addEventListener('input', actualizarTodasLasTarjetas);
                 contadorCaracteres();
-                const hoy = new Date().toISOString().split('T')[0];
-                document.getElementById('fecha').min = hoy;
+                const manana = new Date();
+                manana.setDate(manana.getDate() + 1);
+                document.getElementById('fecha').min = manana.toISOString().split('T')[0];
             });
 
             function contadorCaracteres() {
@@ -235,11 +236,14 @@
                     card.style.width = "100%";
                     card.innerHTML = `
                         <div class="card-body">
-                            <h5 class="card-title">${datos.nombreMascota} <small class="text-muted">#${datos.id}</small></h5>
+                            <h5 class="card-title">${datos.nombreMascota} </h5>
+                            <div class="sobresaliente">
+                            <small class="text-muted">#${datos.id}</small>
                             <span class="emoji">${emojis[datos.tipoMascota]}</span>
-                            <p class="card-text">Tipo: ${datos.tipoMascota}</p>
+                            <small class="text-muted">Tipo: ${datos.tipoMascota}</small>
+                            </div>
                         </div>
-                        <ul class="list-group list-group-flush">
+                        <ul class="list-group list-group-flush no-separators">
                             <li class="list-group-item">Propietario: ${datos.propietario}</li>
                             <li class="list-group-item">Teléfono: ${datos.telefono}</li>
                             <li class="list-group-item">Fecha: ${datos.fecha}</li>
@@ -255,8 +259,8 @@
                             </li>
                         </ul>
                         <div class="card-footer">
-                            <button class="btn btn-warning btn-sm" onclick="editarCita(${datos.id})">
-                                <i class="material-icons">drive_file_rename_outline</i> Editar
+                            <button class="btn btn-success verde btn-sm" onclick="editarCita(${datos.id})">
+                                <i class="material-icons">mode_edit</i> Editar
                             </button>
                             <button class="btn btn-danger btn-sm" onclick="eliminarCita(${datos.id})">
                                 <i class="material-icons">delete</i> Eliminar
