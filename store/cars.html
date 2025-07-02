@@ -13,21 +13,19 @@
 </head>
 
 <body>
-    <div class="all">
-        <header>
-            <div class="banner">
-                <p><span class="cel">call</span> +65 6733 1231</p>
-                <p><span class="ub">place</span> 1001 BUKIT MERAH LANE 3, #01-71, SINGAPORE 159718</p>
-                <p><span class="ad">adjust</span> MON - SAT 8.00 - 18.00 <i class="fa-brands fa-facebook"></i> <i
-                        class="fa-brands fa-square-twitter"></i> <i class="fa-brands fa-linux"></i> <i
-                        class="fa-brands fa-linkedin"></i> <i class="fa-brands fa-youtube"></i></p>
-                <p><span class="log">person</span> Login | Register</p>
-            </div>
-        </header>
-        <section class="catalogo">
-            <img class="portada" src="imgs/portada.jpg" alt="portada">
+    <div class="container">
+        <div class="banner">
+            <p><span class="cel">call</span> +65 6733 1231</p>
+            <p><span class="ub">place</span> 1001 BUKIT MERAH LANE 3, #01-71, SINGAPORE 159718</p>
+            <p><span class="ad">adjust</span> MON - SAT 8.00 - 18.00 <i class="fa-brands fa-facebook"></i> <i
+                    class="fa-brands fa-square-twitter"></i> <i class="fa-brands fa-linux"></i> <i
+                    class="fa-brands fa-linkedin"></i> <i class="fa-brands fa-youtube"></i></p>
+            <p><span class="log">person</span> Login | Register</p>
+        </div>
+        <div class="cat">
+            <img src="imgs/portada.jpg" alt="portada" class="portada">
             <div class="banner2">
-                <img class="img1" src="imgs/text.png" alt="text">
+                <img src="imgs/text.png" alt="text" class="img1">
                 <h1>HOME</h1>
                 <h1>ABOUT US</h1>
                 <h1>ALL VEHICLES</h1>
@@ -36,51 +34,50 @@
                 <span class="user">account_circle</span>
                 <h2><span class="carro">local_shipping</span> ADD YOUR ITEM</h2>
             </div>
-            <img class="img2" src="imgs/textfl.png" alt="texto flecha">
+        </div>
+        <img src="imgs/textfl.png" alt="texto flecha" class="img2">
+        <div class="contenedor-pestañas">
+            <input type="radio" id="tab-all" name="tabs" checked>
+            <label for="tab-all">
+                <h3>All Conditions</h3>
+            </label>
 
-            <div class="contenedor-pestañas">
-                <input type="radio" id="tab-all" name="tabs" checked>
-                <label for="tab-all">
-                    <h3>All Conditions</h3>
-                </label>
+            <input type="radio" id="tab-new" name="tabs">
+            <label for="tab-new">
+                <h3>New Cars</h3>
+            </label>
 
-                <input type="radio" id="tab-new" name="tabs">
-                <label for="tab-new">
-                    <h3>New Cars</h3>
-                </label>
+            <input type="radio" id="tab-used" name="tabs">
+            <label for="tab-used">
+                <h3>Used Cars</h3>
+            </label>
 
-                <input type="radio" id="tab-used" name="tabs">
-                <label for="tab-used">
-                    <h3>Used Cars</h3>
-                </label>
-
-                <div class="listas">
-                    <select class="referrer" id="referrer" name="referrer">
-                        <option value="">Choose Make</option>
-                        <option value="1">Ferrari</option>
-                        <option value="2">Eclipse</option>
-                        <option value="3">Lamborghini</option>
-                        <option value="4">Supra</option>
-                    </select>
-                    <select class="referrer" id="referrer" name="referrer">
-                        <option value="">Choose Model</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                    <select class="referrer" id="referrer" name="referrer">
-                        <option value="">Max Price</option>
-                        <option value="1">$ 10.000</option>
-                        <option value="2">$ 30.000</option>
-                        <option value="3">$ 45.000</option>
-                        <option value="4">$ 60.000</option>
-                    </select>
-                    <textarea id="bio" name="bio" rows="3" cols="20" placeholder=""></textarea>
-                    <p1><span class="lupa">search</span> 30 CARS</p1>
-                </div>
+            <div class="listas">
+                <select class="referrer" id="referrer" name="referrer">
+                    <option value="">Choose Make</option>
+                    <option value="1">Ferrari</option>
+                    <option value="2">Eclipse</option>
+                    <option value="3">Lamborghini</option>
+                    <option value="4">Supra</option>
+                </select>
+                <select class="referrer" id="referrer" name="referrer">
+                    <option value="">Choose Model</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <select class="referrer" id="referrer" name="referrer">
+                    <option value="">Max Price</option>
+                    <option value="1">$ 10.000</option>
+                    <option value="2">$ 30.000</option>
+                    <option value="3">$ 45.000</option>
+                    <option value="4">$ 60.000</option>
+                </select>
+                <textarea id="bio" name="bio" rows="3" cols="20" placeholder=""></textarea>
+                <p1><span class="lupa">search</span> 30 CARS</p1>
             </div>
-        </section>
+        </div>
         <div class="title2">
             <div>
                 <h4>New/Used Cars</h4>
@@ -250,11 +247,11 @@
                 </div>
             </div>
         </div>
-
-        <h6>SHOW ALL</h6>
-
+        <div class="show">
+            <h6>SHOW ALL</h6>
+        </div>
         <div class="banner1">
-            <img class="img4" src="imgs/carfond.jpg" alt="carfond">
+            <img src="imgs/carfond.jpg" alt="carfond" class="img4">
             <div class="textban">
                 <div class="col1">
                     <div>
@@ -297,14 +294,10 @@
         <div class="title3">
             <h4>News & Reviews</h4>
         </div>
-        <div class="grilla1">
+        <div class="grilla2">
             <div class="a1">
                 <p class="en1"><span class="per1">groups</span> VIDEO</p>
                 <img class="img5" src="imgs/ts.jpg" alt="car">
-                <div class="diagonal"></div>
-                <div class="txtdiagonal">
-                    <h7>STICKY POST</h7>
-                </div>
                 <div class="text1">
                     <p4>Tesla Model S: Top Secret Car Collector's Garage</p4>
                     <div class="division1"></div>
@@ -350,7 +343,7 @@
                 <p6>© 2016 <p7>Commercial Vehicles</p7> | Trademarks and brands are the property of their respective owners.</p6>
                 <p6 class="icons2"><i class="fa-brands fa-facebook"></i> <i
                 class="fa-brands fa-square-twitter"></i> <i class="fa-brands fa-linux"></i> <i
-                class="fa-brands fa-linkedin"></i> <i class="fa-brands fa-youtube"></p6>
+                class="fa-brands fa-linkedin"></i></p6>
             </div>
         </div>
     </div>
