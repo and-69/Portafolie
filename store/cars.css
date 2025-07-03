@@ -1202,6 +1202,12 @@ p7{
     .price1{
         width: 100px;
     }
+     .img4{
+        height: 500px;
+    }
+    .textban{
+        top: 5210px;
+    }
 }
 @media(max-width:350px){
     .banner2{
