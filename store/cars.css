@@ -277,8 +277,9 @@ h5{
 .fot{
     display: flex;
     gap: 30px;
-    justify-content: left;
-    align-items: left;
+    justify-content: center;
+    align-items: center;
+
     color: rgb(170, 170, 170);
     font-size: 15px;
     margin-top: 10px;
@@ -836,9 +837,6 @@ p7{
         margin-left: 0px;
         width: 100%;
     }
-    .ds{
-        justify-content: space-between;
-    }
     p.ho{
         font-size: 15px;
     }
@@ -1166,6 +1164,7 @@ p7{
     .en{
         font-size: 20px;
     }
+
     .textban{
         grid-template-columns: 1fr;
         left: 130px;
@@ -1175,6 +1174,9 @@ p7{
 @media (max-width:420px){
     .banner2{
         left: 100px;
+    }
+    .banner p{
+        font-size: 11px;
     }
     .img2{
         left: 100px;
@@ -1188,6 +1190,14 @@ p7{
     }
     .textban{
         left: 100px;
+    }
+}
+@media(max-width:395px){
+    .banner2{
+        left: 85px;
+    }
+    h5{
+        font-size: 16px;
     }
 }
 @media(max-width:350px){
