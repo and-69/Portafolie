@@ -1199,6 +1199,9 @@ p7{
     h5{
         font-size: 16px;
     }
+    .price1{
+        width: 100px;
+    }
 }
 @media(max-width:350px){
     .banner2{
