@@ -155,14 +155,19 @@
             };
 
             document.addEventListener('DOMContentLoaded', function () {
-
                 actualizarTodasLasTarjetas();
+                
                 document.getElementById('filtroEstado').addEventListener('change', actualizarTodasLasTarjetas);
                 document.getElementById('buscador').addEventListener('input', actualizarTodasLasTarjetas);
                 contadorCaracteres();
                 const manana = new Date();
                 manana.setDate(manana.getDate() + 1);
                 document.getElementById('fecha').min = manana.toISOString().split('T')[0];
+
+                const modalElement = document.getElementById('exampleModal');
+                modalElement.addEventListener('hidden.bs.modal', function () {
+                    limpiarFormulario();
+                });
             });
 
             function contadorCaracteres() {
